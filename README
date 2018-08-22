@@ -1,0 +1,26 @@
+Jeesh!  These kids are so irritating.
+
+KDE had a nice widget to show the system load and memory usage in the
+panel.  They finally rewrote it after plasma killed the old applets.
+
+Then...
+
+They refused to make the tooltip interactive so you could leave it
+displaying while you watched things change.  Well, that was a very
+small change that I began doing myself after they refused my PR.
+
+Just recently, they decided that the very useful display of cached
+memory was not useful to anyone and removed it.  The argument, such as
+it was, is here:
+
+    https://phabricator.kde.org/D11558 
+
+(A foolish consistency is the hobgoblin of little minds...)
+
+So I decided to maintain my own copy of this nice little applet.  This
+repository contains my changes to restore the cached memory display
+and make the tooltip interactive so that you can actually get a chance
+to read it.
+
+The install file contains a script to modify my version in Fedora.
+Your mileage may vary.
