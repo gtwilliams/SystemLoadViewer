@@ -17,6 +17,10 @@ it was, is here:
 
 (A foolish consistency is the hobgoblin of little minds...)
 
+(By the way, you will much prefer the settings "Monitor Type: Compact
+bar" and "Set Colors Manually".  There is absolutely no way to mistake
+cached memory from application memory when these settings are chosen.)
+
 So I decided to maintain my own copy of this nice little applet.  This
 repository contains my changes to restore the cached memory display
 and make the tooltip interactive so that you can actually get a chance
