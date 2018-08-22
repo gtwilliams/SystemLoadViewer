@@ -1,0 +1,22 @@
+rm -f changed
+PFX=/usr/share/plasma/plasmoids/org.kde.plasma.systemloadviewer/contents
+if ! diff ColorSettings.qml $PFX/ui;then
+    sudo mv $PFX/ui/ColorSettings.qml $PFX/ui/ColorSettings.qml.bak
+    sudo cp ColorSettings.qml $PFX/ui/ColorSettings.qml
+    touch changed
+fi
+if ! diff SystemLoadViewer.qml $PFX/ui;then
+    sudo mv $PFX/ui/SystemLoadViewer.qml $PFX/ui/SystemLoadViewer.qml.bak
+    sudo cp SystemLoadViewer.qml $PFX/ui/SystemLoadViewer.qml
+    touch changed
+fi
+if ! diff main.xml $PFX/config;then
+    sudo mv $PFX/config/main.xml $PFX/config/main.xml.bak
+    sudo cp main.xml $PFX/config/main.xml
+    touch changed
+fi
+if -f changed;then
+    killall plasmashell
+    /usr/bin/plasmashell&
+fi
+rm -f changed
