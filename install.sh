@@ -1,3 +1,5 @@
+#!/bin/sh
+
 rm -f changed
 PFX=/usr/share/plasma/plasmoids/org.kde.plasma.systemloadviewer/contents
 if ! diff ui/ColorSettings.qml $PFX/ui;then
