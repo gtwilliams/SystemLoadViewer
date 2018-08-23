@@ -17,7 +17,7 @@ if ! diff config/main.xml $PFX/config;then
     sudo cp config/main.xml $PFX/config/main.xml
     touch changed
 fi
-if -f changed;then
+if [ -f changed ];then
     killall plasmashell
     /usr/bin/plasmashell&
 fi
