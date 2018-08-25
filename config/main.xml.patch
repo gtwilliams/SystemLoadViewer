@@ -1,0 +1,12 @@
+--- main.xml    2018-08-24 22:33:08.708469806 -0400
++++ config/main.xml     2018-08-24 22:29:15.473643590 -0400
+@@ -9,6 +9,9 @@
+     <entry name="memApplicationColor" type="Color">
+       <default>blue</default>
+     </entry>
++    <entry name="memCachedColor" type="Color">
++      <default>green</default>
++    </entry>
+     <entry name="memBuffersColor" type="Color">
+       <default>yellow</default>
+     </entry>
