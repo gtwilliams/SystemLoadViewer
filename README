@@ -21,6 +21,10 @@ it was, is here:
 bar" and "Set Colors Manually".  There is absolutely no way to mistake
 cached memory from application memory when these settings are chosen.)
 
+I filed a bug that has been completely ignored:
+
+    https://bugs.kde.org/show_bug.cgi?id=397840
+
 So I decided to maintain my own copy of this nice little applet.  This
 repository contains my changes to restore the cached memory display
 and make the tooltip interactive so that you can actually get a chance
@@ -28,3 +32,9 @@ to read it.
 
 The install file contains a script to modify my version in Fedora.
 Your mileage may vary.
+
+You probably don't want to use the install file.  I added patch files 
+and a list of three commands to patch a Fedora system.  I have 
+successfully used these three patch commands through several updates 
+of these files.  I'll revisit if the patches become out of date for 
+some reason.
