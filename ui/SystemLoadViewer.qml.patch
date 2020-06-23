@@ -1,6 +1,6 @@
 --- SystemLoadViewer.qml        2018-08-24 22:42:53.839835063 -0400
 +++ ui/SystemLoadViewer.qml     2018-08-24 22:29:15.473643590 -0400
-@@ -48,9 +48,11 @@
+@@ -50,9 +50,11 @@
                                                            theme.linkColor]
  
      readonly property var memoryColors: setColorsManually ? [plasmoid.configuration.memApplicationColor,
@@ -14,7 +14,7 @@
      readonly property var swapColors: setColorsManually ? [plasmoid.configuration.swapUsedColor]
                                                          : [theme.highlightColor]
      readonly property var cacheColors: setColorsManually ? [plasmoid.configuration.cacheDirtyColor,
-@@ -135,6 +137,7 @@
+@@ -137,6 +139,7 @@
          readonly property string memFree: memPhysical + "free"
          readonly property string memApplication: memPhysical + "application"
          readonly property string memBuffers: memPhysical + "buf"
@@ -22,7 +22,7 @@
          readonly property string memUsed: memPhysical + "used"
          readonly property string swap: "mem/swap/"
          readonly property string swapUsed: swap + "used"
-@@ -146,7 +149,7 @@
+@@ -148,7 +151,7 @@
  
          property var totalCpuLoadProportions: [.0, .0, .0, .0]
          property int maxCpuIndex: 0
@@ -31,7 +31,7 @@
          property double swapUsageProportion: .0
          property var cacheUsageProportions: [.0, .0]
  
-@@ -157,7 +160,7 @@
+@@ -159,7 +162,7 @@
          function sources() {
              var array = [niceLoad, userLoad, sysLoad,
                           ioWait, memFree, memApplication, memBuffers,
@@ -40,7 +40,7 @@
                           averageClock, totalLoad, cores, cacheDirty,
                           cacheWriteback]
  
-@@ -195,6 +198,10 @@
+@@ -197,6 +200,10 @@
                  memoryUsageProportions[1] = fitMemoryUsage(data.value)
                  memoryUsageProportionsChanged()
              }
@@ -51,7 +51,7 @@
              else if (sourceName == swapUsed) {
                  swapUsageProportion = fitSwapUsage(data.value)
                  swapUsageProportionChanged()
-@@ -363,6 +370,7 @@
+@@ -365,6 +372,7 @@
          id: stdToolTip
          anchors.fill: parent
          active: true
@@ -59,7 +59,7 @@
          mainText: i18n("System load")
          subText: toolTipSubText()
          visible: !plasmoid.configuration.cpuAllActivated || dataSource.maxCpuIndex < 5
-@@ -379,6 +387,7 @@
+@@ -381,6 +389,7 @@
      PlasmaCore.ToolTipArea {
          anchors.fill: parent
          active: true

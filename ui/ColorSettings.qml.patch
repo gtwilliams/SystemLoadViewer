@@ -1,6 +1,6 @@
 --- ColorSettings.qml   2018-08-24 22:35:52.678496711 -0400
 +++ ui/ColorSettings.qml        2018-08-24 22:29:15.473643590 -0400
-@@ -28,6 +28,7 @@
+@@ -30,6 +30,7 @@
  
      property alias cfg_memApplicationColor: memApplicationColorPicker.color
      property alias cfg_memBuffersColor: memBuffersColorPicker.color
@@ -8,19 +8,16 @@
      property alias cfg_cpuUserColor: cpuUserColorPicker.color
      property alias cfg_cpuIOWaitColor: cpuIOWaitColorPicker.color
      property alias cfg_cpuSysColor: cpuSysColorPicker.color
-@@ -116,6 +117,15 @@
-             }
+@@ -95,6 +96,12 @@
+         enabled: setColorsManually.checked
+     }
  
-             Label {
-+                text: i18nc("@label:chooser", "Cached:")
-+                Layout.alignment: Qt.AlignRight
-+            }
++    KQuickControls.ColorButton {
++        id: memCachedColorPicker
++        Kirigami.FormData.label: i18nc("@label:chooser", "Cached:")
++        enabled: setColorsManually.checked
++    }
 +
-+            KQuickControls.ColorButton {
-+                id: memCachedColorPicker
-+            }
-+
-+            Label {
-                 text: i18nc("@title:group", "Swap")
-                 Layout.columnSpan: 2
-                 font.bold: true
+ 
+     Item {
+         Kirigami.FormData.isSection: true
