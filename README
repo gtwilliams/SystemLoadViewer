@@ -33,8 +33,8 @@ to read it.
 The install file contains a script to modify my version in Fedora.
 Your mileage may vary.
 
-You probably don't want to use the install file.  I added patch files 
-and a list of three commands to patch a Fedora system.  I have 
-successfully used these three patch commands through several updates 
-of these files.  I'll revisit if the patches become out of date for 
+You probably don't want to use the install file.  I added patch files
+and a list of three commands to patch a Fedora system.  I have
+successfully used these three patch commands through several updates
+of these files.  I'll revisit if the patches become out of date for
 some reason.

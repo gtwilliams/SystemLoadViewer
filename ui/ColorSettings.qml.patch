@@ -8,3 +8,16 @@
      property alias cfg_cpuUserColor: cpuUserColorPicker.color
      property alias cfg_cpuIOWaitColor: cpuIOWaitColorPicker.color
      property alias cfg_cpuSysColor: cpuSysColorPicker.color
+@@ -95,6 +96,12 @@
+         enabled: setColorsManually.checked
+     }
+ 
++    KQuickControls.ColorButton {
++        id: memCachedColorPicker
++        Kirigami.FormData.label: i18nc("@label:chooser", "Cached:")
++        enabled: setColorsManually.checked
++    }
++
+ 
+     Item {
+         Kirigami.FormData.isSection: true
