@@ -23,13 +23,15 @@
 import QtQuick 2.2
 import QtQuick.Layouts 1.1
 import org.kde.plasma.core 2.0 as PlasmaCore
-import org.kde.plasma.components 2.0 as PlasmaComponents
+import org.kde.plasma.components 3.0 as PlasmaComponents3
 import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.kio 1.0 as Kio
 import org.kde.plasma.plasmoid 2.0
 
 Item {
     id: main
+
+    Plasmoid.backgroundHints: PlasmaCore.Types.DefaultBackground | PlasmaCore.Types.ConfigurableBackground
 
     readonly property double maxCpuLoad: 100.0
     readonly property int borderWidth: 1
@@ -404,7 +406,7 @@ Item {
                     level: 3
                     text: stdToolTip.mainText
                 }
-                PlasmaComponents.Label {
+                PlasmaComponents3.Label {
                     id: tooltipSubtext
                     text: toolTipSubText()
                     opacity: 0.7
@@ -453,6 +455,8 @@ Item {
                         level: main.headingLevel
                         text: i18n("CPU %1", cpuIndex)
                         visible: main.labelsVisible
+                        horizontalAlignment: Text.AlignHCenter
+                        Layout.fillWidth: true
                     }
                     ConditionallyLoadedMonitors {
                         colors: cpuColors
@@ -484,6 +488,8 @@ Item {
                 level: main.headingLevel
                 text: i18n("CPU")
                 visible: main.labelsVisible
+                horizontalAlignment: Text.AlignHCenter
+                Layout.fillWidth: true
             }
 
             ConditionallyLoadedMonitors {
@@ -504,6 +510,8 @@ Item {
                 level: main.headingLevel
                 text: i18n("Memory")
                 visible: main.labelsVisible
+                horizontalAlignment: Text.AlignHCenter
+                Layout.fillWidth: true
             }
 
             ConditionallyLoadedMonitors {
@@ -524,6 +532,8 @@ Item {
                 level: main.headingLevel
                 text: i18n("Swap")
                 visible: main.labelsVisible
+                horizontalAlignment: Text.AlignHCenter
+                Layout.fillWidth: true
             }
 
             ConditionallyLoadedMonitors {
@@ -544,6 +554,8 @@ Item {
                 level: main.headingLevel
                 text: i18n("Cache")
                 visible: main.labelsVisible
+                horizontalAlignment: Text.AlignHCenter
+                Layout.fillWidth: true
             }
 
             ConditionallyLoadedMonitors {
@@ -553,6 +565,3 @@ Item {
         }
     } // rowLayout
 } // main
-
-/* vim: sw=4 sts=4 ts=8 et ai
-*/
