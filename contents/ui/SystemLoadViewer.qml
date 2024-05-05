@@ -2,6 +2,7 @@
  * Copyright (C) 2014 Martin Yrjölä <martin.yrjola@gmail.com>
  * Copyright (C) 2015 Joshua Worth <joshua@worth.id.au>
  * Copyright (C) 2015 Kåre Särs <kae.sars@iki.fi>
+ * Copyright (C) 2024 Garry T. Williams <gtwilliams@gmail.com>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -22,13 +23,15 @@
 
 import QtQuick 2.2
 import QtQuick.Layouts 1.1
-import org.kde.plasma.core 2.0 as PlasmaCore
+import org.kde.plasma.core as PlasmaCore
 import org.kde.plasma.components 3.0 as PlasmaComponents3
 import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.kio 1.0 as Kio
-import org.kde.plasma.plasmoid 2.0
+import org.kde.plasma.plasmoid
+import org.kde.kirigami as Kirigami
+import org.kde.plasma.plasma5support as Plasma5Support
 
-Item {
+PlasmoidItem {
     id: main
 
     Plasmoid.backgroundHints: PlasmaCore.Types.DefaultBackground | PlasmaCore.Types.ConfigurableBackground
@@ -124,7 +127,7 @@ Item {
 
     Kio.KRun { id: kRun }
 
-    PlasmaCore.DataSource {
+    Plasma5Support.DataSource {
         id: dataSource
         engine: "systemmonitor"
 
@@ -401,7 +404,7 @@ Item {
                     left:parent.left
                     margins: units.gridUnit
                 }
-                PlasmaExtras.Heading {
+                Kirigami.Heading {
                     id: tooltipMaintext
                     level: 3
                     text: stdToolTip.mainText
@@ -450,7 +453,7 @@ Item {
                     Layout.minimumWidth: cpusRow.minCpuWidth
                     readonly property int cpuIndex: index
 
-                    PlasmaExtras.Heading {
+                    Kirigami.Heading {
                         id: cpuLabel
                         level: main.headingLevel
                         text: i18n("CPU %1", cpuIndex)
@@ -483,7 +486,7 @@ Item {
             Layout.minimumWidth: minWidth
             Layout.preferredWidth: height
 
-            PlasmaExtras.Heading {
+            Kirigami.Heading {
                 id: cpuLabel
                 level: main.headingLevel
                 text: i18n("CPU")
@@ -505,7 +508,7 @@ Item {
             Layout.minimumWidth: minWidth
             Layout.preferredWidth: height
 
-            PlasmaExtras.Heading {
+            Kirigami.Heading {
                 id: memoryLabel
                 level: main.headingLevel
                 text: i18n("Memory")
@@ -527,7 +530,7 @@ Item {
             Layout.minimumWidth: minWidth
             Layout.preferredWidth: height
 
-            PlasmaExtras.Heading {
+            Kirigami.Heading {
                 id: swapLabel
                 level: main.headingLevel
                 text: i18n("Swap")
@@ -549,7 +552,7 @@ Item {
             Layout.minimumWidth: minWidth
             Layout.preferredWidth: height
 
-            PlasmaExtras.Heading {
+            Kirigami.Heading {
                 id: cacheLabel
                 level: main.headingLevel
                 text: i18n("Cache")
