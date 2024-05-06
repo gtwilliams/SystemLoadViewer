@@ -23,7 +23,7 @@ import QtQuick 2.2
 import QtQuick.Layouts 1.1
 import QtGraphicalEffects 1.0
 
-Item {
+PlasmoidItem {
     id: barMonitor
 
     property var colors

@@ -20,9 +20,10 @@
 
 import QtQuick 2.2
 import QtQuick.Layouts 1.1
-import org.kde.plasma.extras 2.0 as PlasmaExtras
+import org.kde.plasma.extras as PlasmaExtras
+import org.kde.plasma.plasmoid
 
-Item {
+PlasmoidItem {
     property var colors
     property var proportions
 

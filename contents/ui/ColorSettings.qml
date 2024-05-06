@@ -20,10 +20,10 @@
  */
 
 import QtQuick 2.5
-import QtQuick.Controls 2.5 as QQC2
+import QtQuick.Controls as QQC2
 
-import org.kde.kirigami 2.5 as Kirigami
-import org.kde.kquickcontrols 2.0 as KQuickControls
+import org.kde.kirigami as Kirigami
+import org.kde.kquickcontrols as KQuickControls
 
 Kirigami.FormLayout {
     id: colorSettings
