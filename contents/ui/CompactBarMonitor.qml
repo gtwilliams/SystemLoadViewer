@@ -22,6 +22,8 @@
 import QtQuick 2.2
 import QtQuick.Layouts 1.1
 import QtGraphicalEffects 1.0
+import org.kde.plasma.core as PlasmaCore
+import org.kde.plasma.plasmoid
 
 PlasmoidItem {
     id: barMonitor
