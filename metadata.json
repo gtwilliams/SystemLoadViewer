@@ -133,6 +133,6 @@
         "Version": "0.8",
         "Website": "https://kde.org/plasma-desktop/"
     },
-    "x-Plasma-API-Minimum-Version": "6.0"
+    "x-Plasma-API-Minimum-Version": "6.0",
     "KPackageStructure": "Plasma/Applet"
 }
