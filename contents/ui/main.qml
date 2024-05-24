@@ -25,7 +25,6 @@ import QtQuick 2.2
 import QtQuick.Layouts
 import org.kde.plasma.core as PlasmaCore
 import org.kde.plasma.components as PlasmaComponents3
-import org.kde.plasma.extras as PlasmaExtras
 import org.kde.kio as Kio
 import org.kde.plasma.plasmoid
 import org.kde.kirigami as Kirigami

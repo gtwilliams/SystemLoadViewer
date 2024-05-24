@@ -19,8 +19,7 @@
  */
 
 import QtQuick 2.2
-import QtQuick.Layouts 1.1
-import org.kde.plasma.extras as PlasmaExtras
+import QtQuick.Layouts
 import org.kde.plasma.plasmoid
 
 PlasmoidItem {
