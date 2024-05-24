@@ -25,7 +25,9 @@ import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.kquickcontrols as KQuickControls
 
-Kirigami.FormLayout {
+import org.kde.kcmutils as KCM
+
+KCM.SimpleKCM {
     id: colorSettings
 
     property alias cfg_memApplicationColor: memApplicationColorPicker.color
@@ -40,99 +42,101 @@ Kirigami.FormLayout {
     property alias cfg_cacheWritebackColor: cacheWritebackColorPicker.color
     property alias cfg_setColorsManually: setColorsManually.checked
 
-    QQC2.CheckBox {
-        id: setColorsManually
-        text: i18nc("@option:check", "Set Colors Manually")
-    }
+    Kirigami.FormLayout {
+	QQC2.CheckBox {
+	    id: setColorsManually
+	    text: i18nc("@option:check", "Set Colors Manually")
+	}
 
-    Item {
-        Kirigami.FormData.isSection: true
-        Kirigami.FormData.label: i18nc("@title:group", "CPU")
-        enabled: setColorsManually.checked
-    }
-
-
-    KQuickControls.ColorButton {
-        id: cpuUserColorPicker
-        Kirigami.FormData.label: i18nc("@label:chooser", "User:")
-        enabled: setColorsManually.checked
-    }
-
-    KQuickControls.ColorButton {
-        id: cpuIOWaitColorPicker
-        Kirigami.FormData.label: i18nc("@label:chooser", "IOWait:")
-        enabled: setColorsManually.checked
-    }
-
-    KQuickControls.ColorButton {
-        id: cpuSysColorPicker
-        Kirigami.FormData.label: i18nc("@label:chooser", "Sys:")
-        enabled: setColorsManually.checked
-    }
-
-    KQuickControls.ColorButton {
-        id: cpuNiceColorPicker
-        Kirigami.FormData.label: i18nc("@label:chooser", "Nice:")
-        enabled: setColorsManually.checked
-    }
+	Item {
+	    Kirigami.FormData.isSection: true
+	    Kirigami.FormData.label: i18nc("@title:group", "CPU")
+	    enabled: setColorsManually.checked
+	}
 
 
-    Item {
-        Kirigami.FormData.isSection: true
-        Kirigami.FormData.label: i18nc("@title:group", "Memory")
-        enabled: setColorsManually.checked
-    }
+	KQuickControls.ColorButton {
+	    id: cpuUserColorPicker
+	    Kirigami.FormData.label: i18nc("@label:chooser", "User:")
+	    enabled: setColorsManually.checked
+	}
+
+	KQuickControls.ColorButton {
+	    id: cpuIOWaitColorPicker
+	    Kirigami.FormData.label: i18nc("@label:chooser", "IOWait:")
+	    enabled: setColorsManually.checked
+	}
+
+	KQuickControls.ColorButton {
+	    id: cpuSysColorPicker
+	    Kirigami.FormData.label: i18nc("@label:chooser", "Sys:")
+	    enabled: setColorsManually.checked
+	}
+
+	KQuickControls.ColorButton {
+	    id: cpuNiceColorPicker
+	    Kirigami.FormData.label: i18nc("@label:chooser", "Nice:")
+	    enabled: setColorsManually.checked
+	}
 
 
-    KQuickControls.ColorButton {
-        id: memApplicationColorPicker
-        Kirigami.FormData.label: i18nc("@label:chooser", "Application:")
-        enabled: setColorsManually.checked
-    }
-
-    KQuickControls.ColorButton {
-        id: memBuffersColorPicker
-        Kirigami.FormData.label: i18nc("@label:chooser", "Buffers:")
-        enabled: setColorsManually.checked
-    }
-
-    KQuickControls.ColorButton {
-        id: memCachedColorPicker
-        Kirigami.FormData.label: i18nc("@label:chooser", "Cached:")
-        enabled: setColorsManually.checked
-    }
+	Item {
+	    Kirigami.FormData.isSection: true
+	    Kirigami.FormData.label: i18nc("@title:group", "Memory")
+	    enabled: setColorsManually.checked
+	}
 
 
-    Item {
-        Kirigami.FormData.isSection: true
-        Kirigami.FormData.label: i18nc("@title:group", "Swap")
-        enabled: setColorsManually.checked
-    }
+	KQuickControls.ColorButton {
+	    id: memApplicationColorPicker
+	    Kirigami.FormData.label: i18nc("@label:chooser", "Application:")
+	    enabled: setColorsManually.checked
+	}
+
+	KQuickControls.ColorButton {
+	    id: memBuffersColorPicker
+	    Kirigami.FormData.label: i18nc("@label:chooser", "Buffers:")
+	    enabled: setColorsManually.checked
+	}
+
+	KQuickControls.ColorButton {
+	    id: memCachedColorPicker
+	    Kirigami.FormData.label: i18nc("@label:chooser", "Cached:")
+	    enabled: setColorsManually.checked
+	}
 
 
-    KQuickControls.ColorButton {
-        id: swapUsedColorPicker
-        Kirigami.FormData.label: i18nc("@label:chooser", "Used swap:")
-        enabled: setColorsManually.checked
-    }
+	Item {
+	    Kirigami.FormData.isSection: true
+	    Kirigami.FormData.label: i18nc("@title:group", "Swap")
+	    enabled: setColorsManually.checked
+	}
 
 
-    Item {
-        Kirigami.FormData.isSection: true
-        Kirigami.FormData.label: i18nc("@title:group", "Cache")
-        enabled: setColorsManually.checked
-    }
+	KQuickControls.ColorButton {
+	    id: swapUsedColorPicker
+	    Kirigami.FormData.label: i18nc("@label:chooser", "Used swap:")
+	    enabled: setColorsManually.checked
+	}
 
 
-    KQuickControls.ColorButton {
-        id: cacheDirtyColorPicker
-        Kirigami.FormData.label: i18nc("@label:chooser", "Dirty memory:")
-        enabled: setColorsManually.checked
-    }
+	Item {
+	    Kirigami.FormData.isSection: true
+	    Kirigami.FormData.label: i18nc("@title:group", "Cache")
+	    enabled: setColorsManually.checked
+	}
 
-    KQuickControls.ColorButton {
-        id: cacheWritebackColorPicker
-        Kirigami.FormData.label: i18nc("@label:chooser", "Writeback memory:")
-        enabled: setColorsManually.checked
+
+	KQuickControls.ColorButton {
+	    id: cacheDirtyColorPicker
+	    Kirigami.FormData.label: i18nc("@label:chooser", "Dirty memory:")
+	    enabled: setColorsManually.checked
+	}
+
+	KQuickControls.ColorButton {
+	    id: cacheWritebackColorPicker
+	    Kirigami.FormData.label: i18nc("@label:chooser", "Writeback memory:")
+	    enabled: setColorsManually.checked
+	}
     }
 }

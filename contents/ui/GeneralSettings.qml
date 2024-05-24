@@ -26,7 +26,9 @@ import QtQuick.Layouts
 
 import org.kde.kirigami as Kirigami
 
-Kirigami.FormLayout {
+import org.kde.kcmutils as KCM
+
+KCM.SimpleKCM {
     id: generalSettings
 
     property alias cfg_cpuActivated: cpuActivatedCheckBox.checked
@@ -37,104 +39,106 @@ Kirigami.FormLayout {
     property alias cfg_updateInterval: updateIntervalSpinBox.value
     property int cfg_monitorType: plasmoid.configuration.monitorType
 
-    QQC2.ButtonGroup {
-        id: monitorTypeGroup
-    }
+    Kirigami.FormLayout {
+	QQC2.ButtonGroup {
+	    id: monitorTypeGroup
+	}
 
-    QQC2.CheckBox {
-        id: cpuActivatedCheckBox
+	QQC2.CheckBox {
+	    id: cpuActivatedCheckBox
 
-        Kirigami.FormData.label: i18nc("@label", "Show:")
+	    Kirigami.FormData.label: i18nc("@label", "Show:")
 
-        text: i18nc("@option:check", "CPU monitor")
-        onCheckedChanged: if (!checked) {cpuAllActivatedCheckBox.checked = false;}
-    }
+	    text: i18nc("@option:check", "CPU monitor")
+	    onCheckedChanged: if (!checked) {cpuAllActivatedCheckBox.checked = false;}
+	}
 
-    RowLayout {
-        Layout.fillWidth: true
+	RowLayout {
+	    Layout.fillWidth: true
 
-        Item {
-            width: Kirigami.Units.gridUnit
-        }
-        QQC2.CheckBox {
-            id: cpuAllActivatedCheckBox
+	    Item {
+		width: Kirigami.Units.gridUnit
+	    }
+	    QQC2.CheckBox {
+		id: cpuAllActivatedCheckBox
 
-            Layout.fillWidth: true
+		Layout.fillWidth: true
 
-            text: i18nc("@option:check", "CPUs separately")
-            enabled: cpuActivatedCheckBox.checked && cfg_monitorType === 2
-        }
-    }
+		text: i18nc("@option:check", "CPUs separately")
+		enabled: cpuActivatedCheckBox.checked && cfg_monitorType === 2
+	    }
+	}
 
-    QQC2.CheckBox {
-        id: memoryActivatedCheckBox
-        text: i18nc("@option:check", "Memory monitor")
-    }
+	QQC2.CheckBox {
+	    id: memoryActivatedCheckBox
+	    text: i18nc("@option:check", "Memory monitor")
+	}
 
-    QQC2.CheckBox {
-        id: swapActivatedCheckBox
-        text: i18nc("@option:check", "Swap monitor")
-    }
+	QQC2.CheckBox {
+	    id: swapActivatedCheckBox
+	    text: i18nc("@option:check", "Swap monitor")
+	}
 
-    QQC2.CheckBox {
-        id: cacheActivatedCheckBox
-        text: i18nc("@option:check", "Cache monitor")
-    }
-
-
-    Item {
-        Kirigami.FormData.isSection: true
-    }
+	QQC2.CheckBox {
+	    id: cacheActivatedCheckBox
+	    text: i18nc("@option:check", "Cache monitor")
+	}
 
 
-    QQC2.RadioButton {
-        id: barMonitorRadio
-        QQC2.ButtonGroup.group: monitorTypeGroup
-
-        Kirigami.FormData.label: i18nc("@label", "Monitor type:")
-
-        text: i18nc("@option:radio", "Bar")
-
-        checked: cfg_monitorType == 0
-        onClicked: if (checked) {cfg_monitorType = 0; cpuAllActivatedCheckBox.checked = false;}
-    }
-
-    QQC2.RadioButton {
-        id: circularMonitorRadio
-        QQC2.ButtonGroup.group: monitorTypeGroup
-
-        text: i18nc("@option:radio", "Circular")
-
-        checked: cfg_monitorType == 1
-        onClicked: if (checked) {cfg_monitorType = 1; cpuAllActivatedCheckBox.checked = false;}
-    }
-
-    QQC2.RadioButton {
-        id: compactBarMonitorRadio
-        QQC2.ButtonGroup.group: monitorTypeGroup
-
-        text: i18nc("@option:radio", "Compact bar")
-
-        checked: cfg_monitorType == 2
-        onClicked: if (checked) cfg_monitorType = 2;
-    }
+	Item {
+	    Kirigami.FormData.isSection: true
+	}
 
 
-        Item {
-        Kirigami.FormData.isSection: true
-    }
+	QQC2.RadioButton {
+	    id: barMonitorRadio
+	    QQC2.ButtonGroup.group: monitorTypeGroup
 
-    // QQC2 SpinBox doesn't cleanly support non-integer values, which can be worked
-    // around, but the code is messy and the user experience is somewhat poor.
-    // So for now, we stick with the QQC1 SpinBox
-    QQC1.SpinBox {
-        id: updateIntervalSpinBox
+	    Kirigami.FormData.label: i18nc("@label", "Monitor type:")
 
-        Kirigami.FormData.label: i18nc("@label:spinbox", "Update interval:")
+	    text: i18nc("@option:radio", "Bar")
 
-        decimals: 1
-        stepSize: 0.1
-        minimumValue: 0.1
-        suffix: i18ncp("@item:valuesuffix spacing to number + unit (seconds)", " second", " seconds")
+	    checked: cfg_monitorType == 0
+	    onClicked: if (checked) {cfg_monitorType = 0; cpuAllActivatedCheckBox.checked = false;}
+	}
+
+	QQC2.RadioButton {
+	    id: circularMonitorRadio
+	    QQC2.ButtonGroup.group: monitorTypeGroup
+
+	    text: i18nc("@option:radio", "Circular")
+
+	    checked: cfg_monitorType == 1
+	    onClicked: if (checked) {cfg_monitorType = 1; cpuAllActivatedCheckBox.checked = false;}
+	}
+
+	QQC2.RadioButton {
+	    id: compactBarMonitorRadio
+	    QQC2.ButtonGroup.group: monitorTypeGroup
+
+	    text: i18nc("@option:radio", "Compact bar")
+
+	    checked: cfg_monitorType == 2
+	    onClicked: if (checked) cfg_monitorType = 2;
+	}
+
+
+	    Item {
+	    Kirigami.FormData.isSection: true
+	}
+
+	// QQC2 SpinBox doesn't cleanly support non-integer values, which can be worked
+	// around, but the code is messy and the user experience is somewhat poor.
+	// So for now, we stick with the QQC1 SpinBox
+	QQC1.SpinBox {
+	    id: updateIntervalSpinBox
+
+	    Kirigami.FormData.label: i18nc("@label:spinbox", "Update interval:")
+
+	    decimals: 1
+	    stepSize: 0.1
+	    minimumValue: 0.1
+	    suffix: i18ncp("@item:valuesuffix spacing to number + unit (seconds)", " second", " seconds")
+	}
     }
 }
