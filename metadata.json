@@ -127,9 +127,6 @@
         "Name[x-test]": "xxSystem Load Viewerxx",
         "Name[zh_CN]": "系统负荷查看器",
         "Name[zh_TW]": "系統負載檢視器",
-        "ServiceTypes": [
-            "Plasma/Applet"
-        ],
         "Version": "0.8",
         "Website": "https://kde.org/plasma-desktop/"
     },
