@@ -78,7 +78,7 @@ PlasmoidItem {
 
 
     // Don't show icon in panel.
-    Plasmoid.preferredRepresentation: Plasmoid.fullRepresentation
+    preferredRepresentation: fullRepresentation
 
     // Correct the size when in panel
     Layout.preferredWidth: {
