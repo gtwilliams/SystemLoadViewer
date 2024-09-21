@@ -25,7 +25,7 @@ import QtQuick
 import QtQuick.Layouts
 import org.kde.plasma.core as PlasmaCore
 import org.kde.plasma.components as PlasmaComponents3
-import org.kde.kio as Kio
+//import org.kde.kio as Kio
 import org.kde.plasma.plasmoid
 import org.kde.kirigami as Kirigami
 import org.kde.plasma.plasma5support as Plasma5Support
@@ -124,7 +124,7 @@ PlasmoidItem {
 
     property bool labelsVisible
 
-    Kio.KRun { id: kRun }
+    //Kio.KRun { id: kRun }
 
     Plasma5Support.DataSource {
         id: dataSource
