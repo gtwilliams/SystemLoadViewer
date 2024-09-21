@@ -127,9 +127,9 @@
         "Name[x-test]": "xxSystem Load Viewerxx",
         "Name[zh_CN]": "系统负荷查看器",
         "Name[zh_TW]": "系統負載檢視器",
-        "Version": "0.8",
+        "Version": "0.9",
         "Website": "https://kde.org/plasma-desktop/"
     },
-    "x-Plasma-API-Minimum-Version": "6.0",
-    "KPackageStructure": "Plasma/Applet"
+    "KPackageStructure": "Plasma/Applet",
+    "X-Plasma-API-Minimum-Version": "6.0"
 }
